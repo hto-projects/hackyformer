@@ -3,7 +3,7 @@ const db = require('./db');
 require('dotenv').config();
 const highScoreModel = require('./highScoreModel');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 10000;
 
 app.use(express.static('public'));
 app.use(express.json());
