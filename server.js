@@ -33,6 +33,15 @@ app.post('/high-scores', (req, res) => {
   }
 });
 
+app.get('/clear-high-scores', async (req, res) => {
+  try {
+    await highScoreModel.deleteMany({});
+    res.json({ message: "High scores cleared" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });

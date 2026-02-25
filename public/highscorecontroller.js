@@ -25,6 +25,27 @@ async function sendHighScore(newScore) {
   }
 }
 
+async function clearHighScores() {
+  if (prompt("Enter password to clear high scores") !== "1991") {
+    alert("wrong :)");
+    return;
+  }
+
+  try {
+    const response = await fetch('/clear-high-scores', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const json = await response.json();
+    console.log(json);
+    await displayHighScores();
+  } catch (error) {
+    alert(error);
+  }
+}
+
 async function getHighestScore() {
   const topScores = await getTopScores();
   if (topScores.length === 0) {

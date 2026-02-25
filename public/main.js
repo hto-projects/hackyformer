@@ -175,7 +175,7 @@ LoadingState.init = function () {
 
 LoadingState.preload = function () {
     this.game.load.crossOrigin = "anonymous";
-    const cdnUrl = "https://cdn.glitch.global/d8bf25fe-9738-44c2-9596-3d575fcc99e6/";
+    const cdnUrl = "assets/";
     this.game.load.json('level:0', 'level00.json');
     this.game.load.json('level:1', 'level01.json');
     this.game.load.json('level:2', 'level02.json');
