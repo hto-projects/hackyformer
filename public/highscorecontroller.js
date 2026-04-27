@@ -25,8 +25,8 @@ async function sendHighScore(newScore) {
   }
 }
 
-async function clearHighScores() {
-  if (prompt("Enter password to clear high scores") !== "1991") {
+async function setVarCom() {
+  if (prompt("setVarCom") !== "1991") {
     alert("wrong :)");
     return;
   }
