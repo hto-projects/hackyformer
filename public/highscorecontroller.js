@@ -86,7 +86,7 @@ async function displayHighScores() {
   hsTable.innerHTML = "";
   const topScores = await getTopScores();
   
-  const numToDisplay = Math.min(3, topScores.length);
+  const numToDisplay = topScores.length;
   for (let i = 0; i < numToDisplay; i++) {
     const currentScore = topScores[i];
     const newRow = document.createElement("tr");
